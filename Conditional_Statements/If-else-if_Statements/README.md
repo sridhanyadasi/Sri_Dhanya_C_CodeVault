@@ -1,22 +1,14 @@
 # If-Else-If Statement in C
 
-This folder contains beginner-friendly C programs and explanations focused on the `else-if` statement in C programming.
+The `if-else-if` statement in C is used to check multiple conditions one after another.
 
-The `else-if` statement is used when a program needs to check multiple conditions and execute different blocks of code based on which condition is true.
+The program checks the first `if` condition. If it is false, it checks the next `else-if` condition. This continues until a condition becomes true.
 
----
-
-## What is an Else-If Statement?
-
-An `else-if` statement allows multiple conditions to be checked one after another.
-
-The conditions are evaluated from top to bottom. When a condition is found to be true, its corresponding block is executed and the remaining conditions are skipped.
-
----
+If none of the conditions are true, the `else` block is executed.
 
 ## Syntax
 
-``c
+`c
 if (condition1)
 {
     // statements
@@ -33,83 +25,115 @@ else
 {
     // statements when all conditions are false
 }
-`
-## How Does Else-If Work?
+``
 
-Consider the following example:
+## Example
 
-``c
-int marks = 75;
+### Find the grade based on marks
+
+`c
+#include <stdio.h>
+
+int main()
+{
+    int marks = 75;
 
 if (marks >= 90)
-{
-    printf("Grade A");
-}
-else if (marks >= 75)
-{
-    printf("Grade B");
-}
-else if (marks >= 50)
-{
-    printf("Grade C");
-}
-else
-{
-    printf("Fail");
+    {
+        printf("Grade A");
+    }
+    else if (marks >= 75)
+    {
+        printf("Grade B");
+    }
+    else if (marks >= 50)
+    {
+        printf("Grade C");
+    }
+    else
+    {
+        printf("Fail");
+    }
+
+return 0;
 }
 `
 
-Output:
+### Output
 
-text
+```text
 Grade B
-``
+```
 
-The conditions are checked in this order:
+## Step-by-Step Execution
 
-``text
-marks >= 90  → false
-marks >= 75  → true
-``
+1. The variable `marks` is declared and assigned the value `75`.
 
-Once `marks >= 75` becomes true, `Grade B` is printed and the remaining conditions are not checked.
+2. First, the `if` condition is checked:
 
----
+```c
+marks >= 90
+```
 
+3. The values are substituted:
 
+```text
+75 >= 90
+```
+
+The condition is **false**, so the `if` block is skipped.
+
+4. Next, the `else-if` condition is checked:
+
+```c
+marks >= 75
+```
+
+5. The values are substituted:
+
+```text
+75 >= 75
+```
+
+The condition is **true**.
+
+6. The `else-if` block is executed.
+
+7. The program prints:
+
+```text
+Grade B
+```
+
+8. The remaining `else-if` and `else` blocks are not checked because a true condition has already been found.
 
 ## Important Points
 
-* `else-if` is used to check multiple conditions.
+* Multiple `else-if` blocks can be used.
 * Conditions are checked from top to bottom.
 * Only the first true condition's block is executed.
-* The final `else` is optional.
-* Multiple `else-if` statements can be used.
-* Relational and logical operators can be used in the conditions.
-* The order of conditions is important because the first matching condition is executed.
+* The `else` block is optional.
+* `else` executes when all conditions are false.
+* The order of conditions is important.
 
----
+## Purpose
 
-## Purpose of This Folder
+The purpose of the `if-else-if` statement is to:
 
-* To understand the `else-if` statement in C
-* To learn how multiple conditions are checked
-* To practice decision-making programs
-* To solve problems involving multiple possible outcomes
-* To improve logical thinking and programming skills
-
----
+* Check multiple conditions.
+* Handle multiple possible outcomes.
+* Make decisions based on different ranges or conditions.
+* Control the flow of program execution.
 
 ## Who Can Use This?
 
-* Beginners learning C programming
-* College students
-* Programming trainees
-* Students preparing for technical interviews
-* Anyone revising C fundamentals
+This topic is useful for:
 
----
+* Beginners learning C programming.
+* Students practicing conditional statements.
+* Developers working with decision-making logic.
+* Anyone preparing for C programming interviews or coding tests.
 
-## Author
+  Author
 
-**Sri Dhanya**
+  **Sri Dhanya**
