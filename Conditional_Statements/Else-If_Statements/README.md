@@ -1,4 +1,4 @@
-# Else-If Statement in C
+# If-Else-If Statement in C
 
 This folder contains beginner-friendly C programs and explanations focused on the `else-if` statement in C programming.
 
