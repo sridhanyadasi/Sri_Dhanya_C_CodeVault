@@ -1,4 +1,5 @@
-Switch Case in C
+
+# Switch Case in C
 
 The `switch` statement in C is used to select and execute one block of code from multiple options based on the value of an expression.
 
