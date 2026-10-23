@@ -14,25 +14,28 @@ break;
 
 ### Stop the loop when the value reaches 3
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int i;
+
     for (i = 1; i <= 5; i++)
     {
         if (i == 3)
         {
             break;
         }
+
         printf("%d\n", i);
     }
+
     printf("Loop terminated");
 
     return 0;
 }
-`
+```
 
 ## Output
 
@@ -55,7 +58,7 @@ Loop terminated
 
 ## Execution Flow
 
-``text
+```text
        Start
          |
          v
@@ -78,7 +81,7 @@ Loop terminated
       |
       v
      End
-`
+```
 
 ## Important Points
 
