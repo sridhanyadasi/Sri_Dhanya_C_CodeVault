@@ -1,4 +1,3 @@
-
 # Switch Case in C
 
 The `switch` statement in C is used to select and execute one block of code from multiple options based on the value of an expression.
@@ -7,61 +6,68 @@ The expression is compared with each `case`. When a matching case is found, its 
 
 ## Syntax
 
-``c
+```c
 switch (expression)
 {
     case value1:
         // Statements
         break;
 
-  case value2:
+    case value2:
         // Statements
         break;
 
-  default:
+    default:
         // Statements when no case matches
 }
-``
+```
 
 ## Example
 
 ### Display the day based on the day number
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int day = 3;
 
-  switch (day)
+    switch (day)
     {
         case 1:
             printf("Monday");
             break;
+
         case 2:
             printf("Tuesday");
             break;
+
         case 3:
             printf("Wednesday");
             break;
+
         case 4:
             printf("Thursday");
             break;
+
         case 5:
             printf("Friday");
             break;
+
         default:
             printf("Invalid day number");
     }
+
     return 0;
 }
-``
+```
+
 ## Output
 
-``text
+```text
 Wednesday
-``
+```
 
 ## Step-by-Step Execution
 
@@ -69,26 +75,25 @@ Wednesday
 
 2. The program enters the `switch` statement:
 
-   ``c
+   ```c
    switch (day)
    ```
 
 3. The value of `day` is compared with each case value.
 
+   - `case 1`: `3 == 1` — false.
+   - `case 2`: `3 == 2` — false.
+   - `case 3`: `3 == 3` — true.
 
-    case 1`: `3 == 1` — false.
-   `case 2`: `3 == 2` — false.
-   `case 3`: `3 == 3` — true.
+4. Since `case 3` matches, the following statement executes:
 
-5. Since `case 3` matches, the following statement executes:
-
-   ``c
+   ```c
    printf("Wednesday");
    ```
 
-6. The `break` statement terminates the `switch` block. The remaining cases are not executed.
+5. The `break` statement terminates the `switch` block. The remaining cases are not executed.
 
-7. The program reaches `return 0;` and terminates successfully.
+6. The program reaches `return 0;` and terminates successfully.
 
 ## Important Points
 
