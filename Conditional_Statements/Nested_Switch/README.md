@@ -1,161 +1,131 @@
-# Operator Precedence and Associativity in C
+# Nested Switch Statement in C
 
-Operator precedence and associativity determine how operators are grouped and evaluated in a C expression.
+A nested `switch` statement in C means using one `switch` statement inside another `switch` statement.
 
-They help us understand which operation should be performed first when an expression contains multiple operators.
+The outer `switch` selects a main option, and the inner `switch` selects a sub-option based on another expression.
 
-## 1. Operator Precedence
-
-Operator precedence determines which operator has higher priority in an expression.
-
-For example:
+## Syntax
 
 ```c
-int result = 10 + 5 * 2;
+switch (expression1)
+{
+    case value1:
+        switch (expression2)
+        {
+            case valueA:
+                // Statements
+                break;
+
+            default:
+                // Statements
+        }
+        break;
+
+    default:
+        // Statements
+}
 ```
 
-Multiplication (`*`) has higher precedence than addition (`+`).
+## Example
 
-Therefore:
-
-```text
-10 + 5 * 2
-10 + 10
-20
-```
-
-Output:
-
-```text
-20
-```
-
-If we want addition to happen first, we can use parentheses:
-
-```c
-int result = (10 + 5) * 2;
-```
-
-Result: `30`
-
-## 2. Operator Associativity
-
-Operator associativity determines how operators with the same precedence are grouped when parentheses do not specify the grouping.
-
-For example:
-
-```c
-int result = 20 / 5 * 2;
-```
-
-Multiplication and division have the same precedence. Both have left-to-right associativity.
-
-Therefore:
-
-```text
-20 / 5 * 2
-4 * 2
-8
-```
-
-Result: `8`
-
-Associativity describes grouping; it does not mean every operation in an expression is necessarily executed in that direction.
-
-## 3. Operator Precedence Hierarchy in C
-
-The following table lists the common operators from higher precedence to lower precedence.
-
-| Priority | Operators | Description | Associativity |
-|---|---|---|---|
-| 1 | `()`, `[]`, `->`, `.` | Function call, array access, member access | Left to right |
-| 2 | `++`, `--`, `!`, `~`, unary `+`, unary `-`, `*`, `&`, `sizeof` | Unary operators | Right to left |
-| 3 | `*`, `/`, `%` | Multiplication, division, modulus | Left to right |
-| 4 | `+`, `-` | Addition, subtraction | Left to right |
-| 5 | `<<`, `>>` | Bitwise shifts | Left to right |
-| 6 | `<`, `<=`, `>`, `>=` | Relational comparisons | Left to right |
-| 7 | `==`, `!=` | Equality comparisons | Left to right |
-| 8 | `&` | Bitwise AND | Left to right |
-| 9 | `^` | Bitwise XOR | Left to right |
-| 10 | `\|` | Bitwise OR | Left to right |
-| 11 | `&&` | Logical AND | Left to right |
-| 12 | `\|\|` | Logical OR | Left to right |
-| 13 | `?:` | Conditional operator | Right to left |
-| 14 | `=`, `+=`, `-=`, `*=`, `/=`, `%=` and other assignments | Assignment operators | Right to left |
-| 15 | `,` | Comma operator | Left to right |
-
-Note: The table shows precedence and associativity, not a universal runtime execution sequence. Parentheses can change grouping. Some expressions involving side effects must not be evaluated based only on this table.
-
-## 4. Example with Execution Steps
+### Select a department and a course
 
 ```c
 #include <stdio.h>
 
 int main()
 {
-    int result = 10 + 6 / 2 * 3 - 4;
+    int department = 1;
+    int course = 2;
 
-    printf("Result = %d", result);
+    switch (department)
+    {
+        case 1:
+            printf("Department: Computer Science\n");
+
+            switch (course)
+            {
+                case 1:
+                    printf("Course: Java");
+                    break;
+
+                case 2:
+                    printf("Course: React");
+                    break;
+
+                default:
+                    printf("Invalid course");
+            }
+            break;
+
+        case 2:
+            printf("Department: Electrical");
+            break;
+
+        default:
+            printf("Invalid department");
+    }
 
     return 0;
 }
 ```
 
-### Output
+## Output
 
 ```text
-Result = 15
+Department: Computer Science
+Course: React
 ```
 
-### Step-by-Step Execution
+## Step-by-Step Execution
 
-**Step 1: Write the expression**
+1. Two variables are initialized:
+   - `department = 1`
+   - `course = 2`
 
-```text
-10 + 6 / 2 * 3 - 4
-```
+2. The outer `switch (department)` checks the value `1`.
 
-**Step 2: Evaluate division and multiplication from left to right**
+3. `case 1` matches, so the program prints:
 
-```text
-10 + 3 * 3 - 4
-10 + 9 - 4
-```
+   `Department: Computer Science`
 
-**Step 3: Evaluate addition and subtraction from left to right**
+4. The program enters the inner `switch (course)`.
 
-```text
-19 - 4
-15
-```
+5. The inner switch checks the value `2`.
+   - `case 1`: No match.
+   - `case 2`: Match.
 
-**Step 4: Store and print the result**
+6. The program prints:
 
-The value `15` is stored in `result` and printed.
+   `Course: React`
 
-## 5. Important Points
+7. The inner `break` exits the inner switch.
 
-- Higher-precedence operators are grouped before lower-precedence operators.
-- Parentheses can explicitly control grouping.
-- Operators with equal precedence use their associativity rules.
-- Assignment operators associate from right to left.
-- Logical `&&` and `||` use short-circuit evaluation.
-- Do not confuse associativity with the actual runtime order of evaluating operands.
-- Avoid modifying the same variable multiple times in one expression without a valid sequencing rule; some expressions have undefined behavior in C.
+8. The outer `break` exits the outer switch.
+
+9. The program reaches `return 0;` and terminates successfully.
+
+## Important Points
+
+- A nested switch contains one `switch` statement inside another.
+- The inner switch executes only when program flow reaches it.
+- Each switch has its own `case` labels and `break` statements.
+- The inner `break` exits only the inner switch, not the outer switch.
+- The outer `break` exits the outer switch.
+- Nested switches are useful when a main choice has additional sub-choices.
 
 ## Purpose
 
-The purpose of operator precedence and associativity is to:
+The purpose of a nested switch is to:
 
-- Understand complex expressions.
-- Evaluate arithmetic and logical expressions correctly.
-- Avoid mistakes when combining multiple operators.
-- Write readable and predictable C programs.
-- Prepare for programming exercises and interviews.
+- Handle main options and sub-options.
+- Build menu-driven programs.
+- Organize multiple levels of decision-making.
+- Execute different actions based on two or more selections.
 
 ## Who Can Use This?
 
-This topic is useful for beginners learning C, students practicing expression evaluation, and developers debugging complex expressions.
+This topic is useful for beginners learning C, students practicing decision-making statements, and developers creating menu-based applications.
 
 ## Author
 
