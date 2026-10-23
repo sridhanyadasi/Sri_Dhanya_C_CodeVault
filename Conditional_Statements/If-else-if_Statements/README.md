@@ -8,7 +8,7 @@ If none of the conditions are true, the `else` block is executed.
 
 ## Syntax
 
-`c
+```c
 if (condition1)
 {
     // statements
@@ -25,20 +25,20 @@ else
 {
     // statements when all conditions are false
 }
-``
+```
 
 ## Example
 
 ### Find the grade based on marks
 
-`c
+```c
 #include <stdio.h>
 
 int main()
 {
     int marks = 75;
 
-if (marks >= 90)
+    if (marks >= 90)
     {
         printf("Grade A");
     }
@@ -55,9 +55,9 @@ if (marks >= 90)
         printf("Fail");
     }
 
-return 0;
+    return 0;
 }
-`
+```
 
 ### Output
 
@@ -109,31 +109,31 @@ Grade B
 
 ## Important Points
 
-* Multiple `else-if` blocks can be used.
-* Conditions are checked from top to bottom.
-* Only the first true condition's block is executed.
-* The `else` block is optional.
-* `else` executes when all conditions are false.
-* The order of conditions is important.
+- Multiple `else-if` blocks can be used.
+- Conditions are checked from top to bottom.
+- Only the first true condition's block is executed.
+- The `else` block is optional.
+- `else` executes when all conditions are false.
+- The order of conditions is important.
 
 ## Purpose
 
 The purpose of the `if-else-if` statement is to:
 
-* Check multiple conditions.
-* Handle multiple possible outcomes.
-* Make decisions based on different ranges or conditions.
-* Control the flow of program execution.
+- Check multiple conditions.
+- Handle multiple possible outcomes.
+- Make decisions based on different ranges or conditions.
+- Control the flow of program execution.
 
 ## Who Can Use This?
 
 This topic is useful for:
 
-* Beginners learning C programming.
-* Students practicing conditional statements.
-* Developers working with decision-making logic.
-* Anyone preparing for C programming interviews or coding tests.
+- Beginners learning C programming.
+- Students practicing conditional statements.
+- Developers working with decision-making logic.
+- Anyone preparing for C programming interviews or coding tests.
 
-  Author
+## Author
 
-  **Sri Dhanya**
+**Sri Dhanya**
