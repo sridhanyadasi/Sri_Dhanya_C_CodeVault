@@ -10,7 +10,7 @@ It is useful when the second condition needs to be checked only if the first con
 
 ## Syntax
 
-`c
+```c
 if (condition1)
 {
     if (condition2)
@@ -18,11 +18,11 @@ if (condition1)
         // statements
     }
 }
-``
+```
 
 The inner `if` statement is executed only when the outer `if` condition is true.
 
---
+---
 
 ## Example
 
@@ -33,7 +33,7 @@ The person must:
 1. Be at least 18 years old.
 2. Have a valid ID.
 
-*c
+```c
 #include <stdio.h>
 
 int main()
@@ -41,7 +41,7 @@ int main()
     int age = 20;
     int hasID = 1;
 
-  if (age >= 18)
+    if (age >= 18)
     {
         if (hasID == 1)
         {
@@ -49,49 +49,49 @@ int main()
         }
     }
 
-  return 0;
+    return 0;
 }
-``
+```
 
 Output:
 
-*text
+```text
 Allowed to enter the exam
+```
 
------
-
+---
 
 ## Step-by-Step Execution
 
 ### Step 1: Declare the variables
 
-*c
+```c
 int age = 20;
 int hasID = 1;
-``
+```
 
 Here:
 
-*text
+```text
 age = 20
 hasID = 1
-``
+```
 
-*In this example, `1` represents that the person has a valid ID.
+In this example, `1` represents that the person has a valid ID.
 
 ---
 
 ### Step 2: Check the Outer If
 
-*c
+```c
 if (age >= 18)
-``
+```
 
 The condition becomes:
 
-*text
+```text
 20 >= 18
-``
+```
 
 This condition is true.
 
@@ -103,15 +103,15 @@ So, the program enters the outer `if` block.
 
 Now the program reaches:
 
-*c
+```c
 if (hasID == 1)
-`
+```
 
 The condition becomes:
 
-*text
+```text
 1 == 1
-``
+```
 
 This condition is also true.
 
@@ -137,7 +137,7 @@ Allowed to enter the exam
 
 ## Execution Flow
 
-*text
+```text
 Start
   |
   v
@@ -160,30 +160,29 @@ age >= 18 ?
               |
               v
       Print "Allowed to enter the exam"
-``
+```
 
 ---
 
 ## Important Points
 
-* A nested `if` contains an `if` statement inside another `if` statement.
-* The inner `if` is checked only when the outer `if` condition is true.
-* Multiple levels of nested `if` statements are possible.
-* Too many nested conditions can make code difficult to read.
-* Nested `if` is useful when one condition depends on another condition.
+- A nested `if` contains an `if` statement inside another `if` statement.
+- The inner `if` is checked only when the outer `if` condition is true.
+- Multiple levels of nested `if` statements are possible.
+- Too many nested conditions can make code difficult to read.
+- Nested `if` is useful when one condition depends on another condition.
 
 ---
 
 ## Purpose of This Folder
 
-* To understand nested `if` statements
-* To learn how one condition can depend on another condition
-* To understand the execution flow of nested conditions
-* To practice decision-making using nested `if`
+- To understand nested `if` statements
+- To learn how one condition can depend on another condition
+- To understand the execution flow of nested conditions
+- To practice decision-making using nested `if`
 
 ---
 
 ## Author
 
 **Sri Dhanya**
-
