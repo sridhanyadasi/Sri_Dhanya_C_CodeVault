@@ -16,38 +16,40 @@ The `for` loop is used when we know the initialization, condition, and update re
 
 ### Syntax
 
-``c
+```c
 for (initialization; condition; update)
 {
     // Statements to repeat
 }
+```
 
-``
-## Example
+### Example
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int i;
-    
-  for (i = 1; i <= 3; i++)
+
+    for (i = 1; i <= 3; i++)
     {
         printf("%d\n", i);
     }
+
     return 0;
 }
-``
+```
 
 ### Output
 
-``text
+```text
 1
 2
 3
-`
-# Execution Steps
+```
+
+### Execution Steps
 
 1. `i = 1` initializes the variable.
 2. `i <= 3` checks whether the condition is true.
@@ -62,37 +64,39 @@ The `while` loop checks the condition before executing its body. It is useful wh
 
 ### Syntax
 
-``c
+```c
 while (condition)
 {
     // Statements to repeat
 }
-`
+```
 
 ### Example
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int i = 1;
+
     while (i <= 3)
     {
         printf("%d\n", i);
         i++;
     }
+
     return 0;
 }
-``
+```
 
 ### Output
 
-``text
+```text
 1
 2
 3
-`
+```
 
 ### Execution Steps
 
@@ -109,22 +113,23 @@ The `do-while` loop executes the body first and checks the condition afterward. 
 
 ### Syntax
 
-``c
+```c
 do
 {
     // Statements to repeat
 }
 while (condition);
-`
+```
 
 ### Example
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int i = 1;
+
     do
     {
         printf("%d\n", i);
@@ -132,17 +137,17 @@ int main()
     }
     while (i <= 3);
 
-  return 0;
+    return 0;
 }
-``
+```
 
 ### Output
 
-``text
+```text
 1
 2
 3
-`
+```
 
 ### Execution Steps
 
