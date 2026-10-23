@@ -1,13 +1,10 @@
-
 ## If Statement In C
-
-
 
 The `if` statement in C is used to execute a block of code only when a specified condition is true.
 
 If the condition is true, the statements inside the `if` block are executed. If the condition is false, the block is skipped.
 
-## Syntax
+ ## Syntax
 
 ```c
 if (condition)
