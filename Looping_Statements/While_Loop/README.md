@@ -1,4 +1,3 @@
-
 # While Loop in C
 
 The `while` loop in C is a looping statement that repeatedly executes a block of code as long as a specified condition is true.
@@ -7,42 +6,44 @@ The condition is checked before executing the loop body. Therefore, if the condi
 
 ## Syntax
 
-``c
+```c
 while (condition)
 {
     // Statements to execute repeatedly
     // Update the loop variable
 }
-`
+```
 
 ## Example
 
 ### Print numbers from 1 to 5
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int i = 1;
+
     while (i <= 5)
     {
         printf("%d\n", i);
         i++;
     }
+
     return 0;
 }
-``
+```
 
 ## Output
 
-``text
+```text
 1
 2
 3
 4
 5
-`
+```
 
 ## Step-by-Step Execution
 
@@ -88,7 +89,7 @@ When `i` becomes `6`, the condition `6 <= 5` is false. The loop stops, and the p
 
 ## Execution Flow
 
-``text
+```text
        Start
          |
          v
@@ -106,7 +107,7 @@ When `i` becomes `6`, the condition `6 <= 5` is false. The loop stops, and the p
     i++
      |
      └──────> Check condition again
-`
+```
 
 ## Important Points
 
