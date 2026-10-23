@@ -6,44 +6,46 @@ Since the condition is checked after executing the loop body, the statements ins
 
 ## Syntax
 
-``c
+```c
 do
 {
     // Statements to execute
     // Update the loop variable
 }
 while (condition);
-`
+```
 
 ## Example
 
 ### Print numbers from 1 to 5
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
     int i = 1;
+
     do
     {
         printf("%d\n", i);
         i++;
     }
     while (i <= 5);
+
     return 0;
 }
-``
+```
 
 ## Output
 
-``text
+```text
 1
 2
 3
 4
 5
-`
+```
 
 ## Step-by-Step Execution
 
@@ -89,7 +91,7 @@ When `i` becomes `6`, the condition `6 <= 5` is false. The loop terminates, and 
 
 ## Execution Flow
 
-``text
+```text
        Start
          |
          v
@@ -113,7 +115,7 @@ When `i` becomes `6`, the condition `6 <= 5` is false. The loop terminates, and 
      |    Exit loop
      |
      └──────> Execute do block again
-`
+```
 
 ## Important Points
 
