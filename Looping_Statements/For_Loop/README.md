@@ -1,79 +1,75 @@
-# For Loop in C
+# While Loop in C
 
-The `for` loop in C is a looping statement used to execute a block of code repeatedly while a specified condition is true.
+The `while` loop in C is a looping statement that repeatedly executes a block of code as long as a specified condition is true.
 
-It is commonly used when we know how a loop should start, when it should stop, and how its variable should change.
+The condition is checked before executing the loop body. Therefore, if the condition is false initially, the loop body will not execute even once.
 
 ## Syntax
 
-``c
-for (initialization; condition; update)
+```c
+while (condition)
 {
     // Statements to execute repeatedly
+    // Update the loop variable
 }
-`
-
-The `for` loop contains three parts:
-
-- **Initialization:** Assigns the initial value to the loop variable.
-- **Condition:** Checks whether the loop should continue.
-- **Update:** Increases or decreases the loop variable after each iteration.
+```
 
 ## Example
 
 ### Print numbers from 1 to 5
 
-``c
+```c
 #include <stdio.h>
 
 int main()
 {
-    int i;
-    for (i = 1; i <= 5; i++)
+    int i = 1;
+
+    while (i <= 5)
     {
         printf("%d\n", i);
+        i++;
     }
+
     return 0;
 }
-`
+```
 
 ## Output
 
-``text
+```text
 1
 2
 3
 4
 5
-`
+```
 
 ## Step-by-Step Execution
 
-**Step 1: Initialization**
+**Step 1: Initialize the variable**
 
-``c
-i = 1;
-`
+```c
+int i = 1;
+```
 
-The variable `i` starts with the value `1`. Initialization happens only once.
+The variable `i` starts with the value `1`.
 
-**Step 2: Condition checking**
+**Step 2: Check the condition**
 
-``c
-i <= 5;
-`
+```c
+while (i <= 5)
+```
 
-The condition is checked before each iteration.
+The condition `1 <= 5` is true, so the loop body executes.
 
-- `1 <= 5` → True, so the loop executes.
-
-**Step 3: Execute the loop body**
+**Step 3: Print the value**
 
 ```c
 printf("%d\n", i);
 ```
 
-The current value of `i` is printed.
+The program prints `1`.
 
 **Step 4: Update the variable**
 
@@ -81,54 +77,53 @@ The current value of `i` is printed.
 i++;
 ```
 
-The value of `i` increases by one.
+The value of `i` becomes `2`.
 
 **Step 5: Repeat the process**
 
-The loop checks the condition again and prints the values `2`, `3`, `4`, and `5`.
+The condition is checked again. The program prints `2`, `3`, `4`, and `5`, increasing `i` after each iteration.
 
 **Step 6: Terminate the loop**
 
-When `i` becomes `6`, the condition `i <= 5` becomes false. The loop stops, and the program continues after the loop.
+When `i` becomes `6`, the condition `6 <= 5` is false. The loop stops, and the program continues after the loop.
 
 ## Execution Flow
 
-``text
+```text
        Start
          |
          v
-   i = 1 (Initialize)
+      i = 1
          |
          v
-    i <= 5 ?
-      /   \
-    Yes    No
-     |      |
-     v      v
+     i <= 5 ?
+      /    \
+    Yes     No
+     |       |
+     v       v
   Print i   Exit loop
      |
      v
     i++
      |
      └──────> Check condition again
-`
+```
 
 ## Important Points
 
-- Initialization executes only once.
-- The condition is checked before each iteration.
-- The loop body executes only when the condition is true.
-- The update runs after the loop body completes normally.
-- If the initial condition is false, the loop body does not execute.
-- Forgetting to update the loop variable can cause an infinite loop.
+- The condition is checked before the loop body executes.
+- The loop body may execute zero or more times.
+- Initialization is usually performed before the loop.
+- The loop variable must be updated appropriately to avoid an infinite loop.
+- The `while` loop is useful when repetition depends on a condition rather than a fixed number of iterations.
 
 ## Purpose
 
-The `for` loop is useful for repeating tasks, printing number sequences, processing arrays, and performing calculations a specific number of times.
+The `while` loop is used to repeat statements while a condition remains true, process input until a requirement is met, and perform calculations repeatedly.
 
 ## Who Can Use This?
 
-This topic is useful for beginners learning C programming, students practicing logical problems, and developers implementing repetitive operations.
+This topic is useful for beginners learning C programming, students practicing logical problems, and developers implementing condition-based repetition.
 
 ## Author
 
